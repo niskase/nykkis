@@ -1,6 +1,6 @@
 #Customer management system v.0.1
 
-Coding & testing: Petri, Tero, Sathiya & Manchester
+Coding & testing: Petri, Tero, Sathiya & Manuchehr
 UI & database & documenter: Petri
 Build engineer: Sathiya
 
