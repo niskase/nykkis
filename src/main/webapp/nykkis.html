@@ -1,71 +1,18 @@
 <!DOCTYPE html>
 <html>
-<style>
-
-form {
-    border: 3px solid #f1f1f1;
-
-}
-
-
-#wrap {
-width: 500px;
-text-align:left;
-margin: 0 auto;
-}
-
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-
-}
-
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 20%;
-}
-
-
-
-.imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-}
-
-.container {
-    padding: 16px;
-}
-
-span.psw {
-    float: right;
-    padding-top: 16px;
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
-    }
+    <head>
+    <title>Nykkis login page</title>
+    <meta charset="utf-8">
+    <link href="style.css" rel="stylesheet">
+    </head>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     
-}
-</style>
 <body id="wrap">
-<h2>   </h2>
 <form action="action_page.php" >
 
   <div align="center"> <img src="logo.png" />
   </div>
-
+  <br />
   <div class="container" align="center">
     <label><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="uname" required>
