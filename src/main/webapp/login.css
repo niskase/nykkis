@@ -5,13 +5,32 @@ form {
     font-family: 'Open Sans', sans-serif;
 
 }
+
 #wrap {
 padding: 60px;
 width: 500px;
 text-align:left;
 margin: 0 auto;
 }
-input[type=text]  {
+#bigbox {
+width: 600px;
+text-align:left;
+margin: 0 auto;
+}
+#boxleft {
+    width: 200px;
+    text-align:left;
+}
+#boxcenter {
+    width: 200px;
+    text-align:left;
+}
+#boxright {
+    width: 200px;
+    text-align:left;
+}
+
+input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -21,39 +40,37 @@ input[type=text]  {
 
 }
 
-
-#submit{
-    background-color: green;
+button {
+    background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
     width: 20%;
+}
+
+
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
     float: right;
-}
-#cancel {
-    background-color: red;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 20%;
+    padding-top: 16px;
 }
 
-
-#search    {
-background:url(../customer_image.jpg);
-background-repeat: no-repeat;
-width:200px;
-height:40px;
-border: 0;
-}
-
+/* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
     span.psw {
        display: block;
        float: none;
     }
     
+}
