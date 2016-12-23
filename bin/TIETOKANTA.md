@@ -1,4 +1,4 @@
-CREATE TABLE USER (
+CREATE TABLE Users (
 UserID int(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 LoginStatus int,
 UserName varchar(50),
@@ -7,13 +7,13 @@ Role varchar(10),
 UNIQUE (UserName)
 );
 
-INSERT INTO USER (LoginStatus, UserName, PassWord, Role)
+INSERT INTO Users (LoginStatus, UserName, PassWord, Role)
 VALUES(0,'admin','root', 'admin');
 
-INSERT INTO USER (LoginStatus, UserName, PassWord, Role)
+INSERT INTO Users (LoginStatus, UserName, PassWord, Role)
 VALUES(0,'seller','root', 'seller');
 
-INSERT INTO USER (LoginStatus, UserName, PassWord, Role)
+INSERT INTO Users (LoginStatus, UserName, PassWord, Role)
 VALUES(0,'boss','root', 'boss');
 
 
