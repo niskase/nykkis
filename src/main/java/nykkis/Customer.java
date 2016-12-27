@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 import javax.faces.bean.*;
-import javax.validation.*;
 
 @ManagedBean
 @RequestScoped
@@ -12,6 +11,11 @@ import javax.validation.*;
 @NamedQuery(name = "searchAllCustomers", query = "SELECT c from Customer c")
 public class Customer implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1423L;
+
 	public enum status {contact,lead,on_going,customer,old_customer,retired};
 	
 	@Id

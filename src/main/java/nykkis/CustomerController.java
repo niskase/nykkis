@@ -11,7 +11,6 @@ package nykkis;
 	@ManagedBean
 	public class CustomerController {
 
-		// EJB-komponentti sisältää datan tallennuksen ja haun tietokannasta JPA:lla
 		@EJB
 		private CustomerEjb customerEjb;
 
@@ -19,7 +18,6 @@ package nykkis;
 		private Customer customer;
 
 		public CustomerController() {
-			// bookEjb.alustaBooket();
 
 		}
 
@@ -32,14 +30,12 @@ package nykkis;
 		}
 
 		public String save() {
+			
 			String viesti = "Tallennus onnistui: " + customer;
 
 			FacesContext facesContext = FacesContext.getCurrentInstance();
 
-			if (customer.getName().length() > 2 && customer.getEmail().length() > 2)
-				customerEjb.save(customer);
-			else 
-				viesti = "tallennus epäonnistui (nimi/malli väh. 2 merkkiä): " + customer;
+			customerEjb.save(customer);
 			
 			FacesMessage facesMessage = new FacesMessage(viesti);
 			facesContext.addMessage(null, facesMessage);
