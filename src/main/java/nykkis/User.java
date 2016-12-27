@@ -1,11 +1,9 @@
 package nykkis;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.*;
 import javax.faces.bean.*;
-import javax.validation.*;
 
 @ManagedBean
 @RequestScoped
@@ -13,6 +11,11 @@ import javax.validation.*;
 @NamedQuery(name = "searchAllUsers", query = "SELECT u from User u")
 
 public class User implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 10000L;
 	
 	@Id
 	@SequenceGenerator(name = "usersequence", sequenceName = "USER_ID_SEQ")
