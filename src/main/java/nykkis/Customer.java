@@ -1,123 +1,141 @@
 package nykkis;
 
+import java.io.Serializable;
 
+import javax.persistence.*;
+import javax.faces.bean.*;
+import javax.validation.*;
 
-public class Customer {
+@ManagedBean
+@RequestScoped
+@Entity
+@NamedQuery(name = "searchAllCustomers", query = "SELECT c from Customer c")
+public class Customer implements Serializable {
 	
-	 public enum  Status {contact,lead,on_going,customer,old_customer,retired};
-		
+	public enum status {contact,lead,on_going,customer,old_customer,retired};
 	
+	@Id
+	@SequenceGenerator(name = "customersequence", sequenceName = "CUSTOMER_ID_SEQ")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customersequence")
+	private long customerid;
+	private long userid;
+	private String customername;
+	private String customerphone;
+	private String customeremail;
+	private String customerphoto;
+	private String customercountry;
+	private String customersellerresp;
+	private String customeraddress;
+	private String customercity;
+	private status customerstatus;
 	
-	private String name;
-	private int customer_id;
-	private String phone;
-	private String email;
-	private String picture;
-	private int seler_id;
-	private String Address;
-	private Status status_id;
+	//constructor
+	public Customer() {
+	}
 	
+	//getters and setters
+
+	public long getCustomerid() {
+		return customerid;
+	}
+
+	public void setCustomerid(long customerid) {
+		this.customerid = customerid;
+	}
+
+	public long getUserid() {
+		return userid;
+	}
+
+	public void setUserid(long userid) {
+		this.userid = userid;
+	}
+
+	public String getCustomername() {
+		return customername;
+	}
+
+	public void setCustomername(String customername) {
+		this.customername = customername;
+	}
+
+	public String getCustomerphone() {
+		return customerphone;
+	}
+
+	public void setCustomerphone(String customerphone) {
+		this.customerphone = customerphone;
+	}
+
+	public String getCustomeremail() {
+		return customeremail;
+	}
+
+	public void setCustomeremail(String customeremail) {
+		this.customeremail = customeremail;
+	}
+
+	public String getCustomerphoto() {
+		return customerphoto;
+	}
+
+	public void setCustomerphoto(String customerphoto) {
+		this.customerphoto = customerphoto;
+	}
+
+	public String getCustomercountry() {
+		return customercountry;
+	}
+
+	public void setCustomercountry(String customercountry) {
+		this.customercountry = customercountry;
+	}
+
+	public String getCustomersellerresp() {
+		return customersellerresp;
+	}
+
+	public void setCustomersellerresp(String customersellerresp) {
+		this.customersellerresp = customersellerresp;
+	}
+
+	public String getCustomeraddress() {
+		return customeraddress;
+	}
+
+	public void setCustomeraddress(String customeraddress) {
+		this.customeraddress = customeraddress;
+	}
+
+	public String getCustomercity() {
+		return customercity;
+	}
+
+	public void setCustomercity(String customercity) {
+		this.customercity = customercity;
+	}
+
+	public status getCustomerstatus() {
+		return customerstatus;
+	}
+
+	public void setCustomerstatus(status customerstatus) {
+		this.customerstatus = customerstatus;
+	}
+
+	//tostring
 	
-	public Customer(){
-		this.name="pekka";
-		this.customer_id=1;
-		this.phone="09233456";
-		this.email="pekka@yahoo.com";
-		this.picture="pekka.jpg";
-		this.seler_id=02;
-		this.Address="pekkalampi 2A10";
-		this.status_id=status_id.contact;
-		
-	 }
-
-
-	public String getName() {
-		return name;
-	}
-
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-
-	public int getCustomer_id() {
-		return customer_id;
-	}
-
-
-	public void setCustomer_id(int customer_id) {
-		this.customer_id = customer_id;
-	}
-
-
-	public String getPhone() {
-		return phone;
-	}
-
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
-
-	public String getEmail() {
-		return email;
-	}
-
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-
-	public String getPicture() {
-		return picture;
-	}
-
-
-	public void setPicture(String picture) {
-		this.picture = picture;
-	}
-
-
-	public int getSeler_id() {
-		return seler_id;
-	}
-
-
-	public void setSeler_id(int seler_id) {
-		this.seler_id = seler_id;
-	}
-
-
-	public String getAddress() {
-		return Address;
-	}
-
-
-	public void setAddress(String address) {
-		Address = address;
-	}
-
-
-	public Status getStatus_id() {
-		return status_id;
-	}
-
-
-	public void setStatus_id(Status status_id) {
-		this.status_id = status_id;
-	}
-
-
 	@Override
 	public String toString() {
-		return "Customer [name=" + name + ", customer_id=" + customer_id + ", phone=" + phone + ", email=" + email
-				+ ", picture=" + picture + ", seler_id=" + seler_id + ", Address=" + Address + ", status_id="
-				+ status_id + "]";
+		return "Customer [customerid=" + customerid + ", userid=" + userid
+				+ ", customername=" + customername + ", customerphone="
+				+ customerphone + ", customeremail=" + customeremail
+				+ ", customerphoto=" + customerphoto + ", customercountry="
+				+ customercountry + ", customersellerresp="
+				+ customersellerresp + ", customeraddress=" + customeraddress
+				+ ", customercity=" + customercity + ", customerstatus="
+				+ customerstatus + "]";
 	}
-	
 	
 	}
 
