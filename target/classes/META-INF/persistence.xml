@@ -8,9 +8,6 @@
  
         <jta-data-source>jdbc/h2demo</jta-data-source>
        
- 		<class>nykkis.Customer</class>
- 		<class>nykkis.CustomerController</class>
- 		<class>nykkis.CustomerEjb</class>
  		<class>nykkis.User</class>
        
         <properties>
