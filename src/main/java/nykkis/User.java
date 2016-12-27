@@ -17,13 +17,17 @@ public class User implements Serializable {
 	 */
 	private static final long serialVersionUID = 10000L;
 	
+	public enum role {
+		SELLER, SERVICER, BILLER, BOSS, ADMIN
+	}
+	
 	@Id
 	@SequenceGenerator(name = "usersequence", sequenceName = "USER_ID_SEQ")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "usersequence")
 	private long userid;
 	private String username;
 	private String password;
-	private String role;
+	private role role;
 	private int loginstatus; 
 
 	//Constructor superclass
