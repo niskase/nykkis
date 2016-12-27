@@ -1,11 +1,9 @@
-#Customer management system v.0.1
+#Nykkis
 
-Coding & testing: Petri, Tero, Sathiya & Manuchehr
-
-
-UI & database & documenter: Petri
+A customer management system project by Petri, Tero, Sathiya & Manuchehr
 
 
-Build engineer: Sathiya
-
-Using GitHub in project version management
+UI, code, database & documentation: Petri/
+UI, documentation & code: Tero/
+UI & building: Sathiya/
+code & building: Manuchehr
