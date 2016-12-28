@@ -8,7 +8,7 @@ public class Company {
 	private String address;
 	private String website;
 	private int customer_id;
-	private int buisness_id;
+	private int business_id;
 	public String getName() {
 		return name;
 	}
@@ -45,16 +45,16 @@ public class Company {
 	public void setCustomer_id(int customer_id) {
 		this.customer_id = customer_id;
 	}
-	public int getBuisness_id() {
-		return buisness_id;
+	public int getBusiness_id() {
+		return business_id;
 	}
-	public void setBuisness_id(int buisness_id) {
-		this.buisness_id = buisness_id;
+	public void setBusiness_id(int business_id) {
+		this.business_id = business_id;
 	}
 	@Override
 	public String toString() {
 		return "Company [name=" + name + ", phone=" + phone + ", email=" + email + ", address=" + address + ", website="
-				+ website + ", customer_id=" + customer_id + ", buisness_id=" + buisness_id + "]";
+				+ website + ", customer_id=" + customer_id + ", buisness_id=" + business_id + "]";
 	}
 	
 	
