@@ -11,7 +11,7 @@ import javax.ejb.Stateless;
 public class CustomerEjb {
 	
 	
-	@PersistenceContext(unitName = "jpa_Customer") // Check persistence.xml
+	@PersistenceContext(unitName = "jpa_nykkis") // Check persistence.xml
 	private EntityManager em;
 
 	public CustomerEjb() {
@@ -19,11 +19,11 @@ public class CustomerEjb {
 	}
 	
 	public void init() {
-		Customer b1= new Customer();
+		Customer c1= new Customer();
 		
 
-		//System.out.println("saved book: " + b1);
-		em.persist(b1);
+		//System.out.println("saved customer: " + c1);
+		em.persist(c1);
 		
 	}
 
@@ -42,7 +42,7 @@ public class CustomerEjb {
 	@SuppressWarnings("unchecked")
 	public List<Customer> getCustomers() {
 		List<Customer> Customers= null; 
-		Customers = em.createNamedQuery("searchAllBooks").getResultList();
+		Customers = em.createNamedQuery("searchAllCustomers").getResultList();
 		System.out.println("*********** search all ********** => " + Customers);
 		return Customers;
 	}
