@@ -60,20 +60,20 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
-	public String getRole() {
-		return role;
-	}
-
-	public void setRole(String role) {
-		this.role = role;
-	}
-
 	public int getLoginstatus() {
 		return loginstatus;
 	}
 
 	public void setLoginstatus(int loginstatus) {
 		this.loginstatus = loginstatus;
+	}
+
+	public role getRole() {
+		return role;
+	}
+
+	public void setRole(role role) {
+		this.role = role;
 	}
 
 	//To string
