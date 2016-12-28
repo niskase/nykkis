@@ -6,6 +6,13 @@
     </head>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <h3>Preview</h3>
+    
+    <h:dataTable styleClass="data" cellspacing="0" cellpadding="0" border="0" rowClasses="odd,even" value="#{customerController.customer}" var="c">
+    <h:column headerstyleClass="first">
+    	<f:facet name="header">Name</f:facet>
+    	#{c.customername}
+    </h:column>
+    </h:dataTable>
   <body id="wrap">
     <button id="submit" type="button">Save</button>
       <button id="cancel" type="button">Cancel</button>

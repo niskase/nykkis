@@ -19,11 +19,11 @@ public class CustomerEjb {
 	}
 	
 	public void init() {
-		Customer c1= new Customer();
+		Customer c= new Customer();
 		
 
-		//System.out.println("saved customer: " + c1);
-		em.persist(c1);
+		//System.out.println("saved customer: " + c);
+		em.persist(c);
 		
 	}
 
