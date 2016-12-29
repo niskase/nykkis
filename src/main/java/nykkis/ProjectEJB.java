@@ -16,7 +16,7 @@ public class ProjectEJB {
 	
 	@PersistenceContext(unitName = "jpa_nykkis") // Check persistence.xml
 	private EntityManager em;
-
+	
 	public ProjectEJB() {
 
 	}
@@ -48,7 +48,6 @@ public class ProjectEJB {
 		em.persist(customer1);
 		
 	}
-
 
 	public void save(Customer customer) {
 		try {
