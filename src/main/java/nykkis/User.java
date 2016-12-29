@@ -15,15 +15,13 @@ public class User implements Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 10000L;
+	//private static final long serialVersionUID = 1L;
 	
 	public enum role {
 		SELLER, SERVICER, BILLER, BOSS, ADMIN
 	}
 	
 	@Id
-	@SequenceGenerator(name = "usersequence", sequenceName = "USER_ID_SEQ")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "usersequence")
 	private long userid;
 	private String username;
 	private String password;
@@ -74,14 +72,6 @@ public class User implements Serializable {
 
 	public void setRole(role role) {
 		this.role = role;
-	}
-
-	//To string
-	@Override
-	public String toString() {
-		return "User [userid=" + userid + ", username=" + username
-				+ ", password=" + password + ", role=" + role
-				+ ", loginstatus=" + loginstatus + "]";
 	}
 	
 }

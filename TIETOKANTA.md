@@ -30,7 +30,7 @@ CustomerAddress varchar(255),
 CustomerZipCode int(10),
 CustomerCity varchar(255),
 CustomerStatus varchar(20),
-FOREIGN KEY (UserID) REFERENCES Users(UserID),
+FOREIGN KEY (UserID) REFERENCES USER(UserID),
 UNIQUE (CustomerEmail)
 );
 

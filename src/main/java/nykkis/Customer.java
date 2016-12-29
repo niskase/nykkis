@@ -14,15 +14,13 @@ public class Customer implements Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1423L;
+	//private static final long serialVersionUID = 1L;
 
 	public enum status {contact,lead,on_going,customer,old_customer,retired};
 	
 	@Id
-	@SequenceGenerator(name = "customersequence", sequenceName = "CUSTOMER_ID_SEQ")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customersequence")
 	private long customerid;
-	private long userid;
+	public long userid;
 	private String customername;
 	private String customerphone;
 	private String customeremail;
@@ -125,20 +123,6 @@ public class Customer implements Serializable {
 
 	public void setCustomerstatus(status customerstatus) {
 		this.customerstatus = customerstatus;
-	}
-
-	//tostring
-	
-	@Override
-	public String toString() {
-		return "Customer [customerid=" + customerid + ", userid=" + userid
-				+ ", customername=" + customername + ", customerphone="
-				+ customerphone + ", customeremail=" + customeremail
-				+ ", customerphoto=" + customerphoto + ", customercountry="
-				+ customercountry + ", customersellerresp="
-				+ customersellerresp + ", customeraddress=" + customeraddress
-				+ ", customercity=" + customercity + ", customerstatus="
-				+ customerstatus + "]";
 	}
 	
 	}
