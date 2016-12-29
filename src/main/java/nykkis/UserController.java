@@ -11,9 +11,9 @@ import javax.ejb.EJB;
 
 	@ManagedBean
 	public class UserController {
-
+		// olio sisältää datan tallennuksen ja haun tietokannasta JPA:lla
 		@EJB
-		private CustomerEjb userEjb;
+		private ProjectEJB userEjb;
 
 		@ManagedProperty(value = "#{user}")
 		private User user;

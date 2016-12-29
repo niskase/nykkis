@@ -8,20 +8,22 @@ import javax.faces.bean.*;
 @ManagedBean
 @RequestScoped
 @Entity
-@NamedQuery(name = "searchAllUsers", query = "SELECT u from User u")
+@NamedQueries({ @NamedQuery(name = "searchAllUsers", query = "SELECT u from User u"),
+	@NamedQuery(name = "seatchByName", query = "SELECT u from User u where u.userid like :username") })
 
 public class User implements Serializable {
 	
 	/**
 	 * 
 	 */
-	//private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 	
 	public enum role {
 		SELLER, SERVICER, BILLER, BOSS, ADMIN
 	}
 	
 	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
 	private long userid;
 	private String username;
 	private String password;
@@ -29,8 +31,8 @@ public class User implements Serializable {
 	private int loginstatus; 
 
 	//Constructor superclass
-	public User () {
-		
+	public User() {
+		super();
 	}
 
 	// Getters & setters

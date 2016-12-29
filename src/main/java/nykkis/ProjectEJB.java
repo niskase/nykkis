@@ -11,43 +11,41 @@ import nykkis.Customer.status;
 import nykkis.User.role;
 
 @Stateless
-public class CustomerEjb {
+public class ProjectEJB {
 	
 	
 	@PersistenceContext(unitName = "jpa_nykkis") // Check persistence.xml
 	private EntityManager em;
 
-	public CustomerEjb() {
+	public ProjectEJB() {
 
 	}
 	
 	public void init() {
 		
-		User user = new User();
-		user.setUserid(1);
-		user.setUsername("admin");
-		user.setPassword("pass");
-		user.setRole(role.ADMIN);
-		user.setLoginstatus(0); 
+		User user1 = new User();
+		user1.setUserid(1);
+		user1.setUsername("admin");
+		user1.setPassword("pass");
+		user1.setRole(role.ADMIN);
+		user1.setLoginstatus(0); 
 		
-		em.persist(user);
+		em.persist(user1);
 		
-		Customer customer = new Customer();
-		customer.setCustomerid(1);
-		customer.setUserid(1);
-		customer.setCustomername("Customer");
-		customer.setCustomerphone("0000000000");
-		customer.setCustomeremail("customer@mail.com");
-		customer.setCustomerphoto(null);
-		customer.setCustomercountry("Finland");
-		customer.setCustomersellerresp(null);
-		customer.setCustomeraddress("Jokelantie 1");
-		customer.setCustomercity("Jyväskylä");
-		customer.setCustomerstatus(status.contact);
+		Customer customer1 = new Customer();
+		customer1.setCustomerid(1);
+		customer1.setUserid(1);
+		customer1.setCustomername("Customer");
+		customer1.setCustomerphone("0000000000");
+		customer1.setCustomeremail("customer@mail.com");
+		customer1.setCustomerphoto(null);
+		customer1.setCustomercountry("Finland");
+		customer1.setCustomersellerresp(null);
+		customer1.setCustomeraddress("Jokelantie 1");
+		customer1.setCustomercity("Jyväskylä");
+		customer1.setCustomerstatus(status.contact);
 		
-		System.out.println("saved customer: " + customer);
-		
-		em.persist(customer);
+		em.persist(customer1);
 		
 	}
 

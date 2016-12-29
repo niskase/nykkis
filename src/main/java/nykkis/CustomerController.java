@@ -13,7 +13,7 @@ import javax.ejb.EJB;
 	public class CustomerController {
 
 		@EJB
-		private CustomerEjb customerEjb;
+		private ProjectEJB customerEjb;
 
 		@ManagedProperty(value = "#{customer}")
 		private Customer customer;

@@ -19,6 +19,7 @@ public class Customer implements Serializable {
 	public enum status {contact,lead,on_going,customer,old_customer,retired};
 	
 	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
 	private long customerid;
 	public long userid;
 	private String customername;
