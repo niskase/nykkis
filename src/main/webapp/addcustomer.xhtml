@@ -1,14 +1,15 @@
-<html>
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
 
-<head>
-<title>Nykkis customerform</title>
-    <meta charset="utf-8">
-    <link href="customerform.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <h3>Add new customer</h3>
-    </head>
-    <body id="wrap">
-    <form>
+<h:head>
+	<title>Add a customer</title>
+</h:head>
+
+<h:body>
+    <h:form>
         Name    :<input type="text"><br>
         Phone   :<input type="text"><br>
         Email   :<input type="text"><br>
@@ -18,7 +19,7 @@
         Photo:<image src="customer_image.jpg"/><input id="search" type="file" > <br>
        <button id="cancel" type="button" >Cancel</button>
          <button id="submit" type="submit" >Submit</button>
-        </form>
+    </h:form>
     
-    </body>
+    </h:body>
 </html>

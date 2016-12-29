@@ -6,7 +6,7 @@
     <persistence-unit name="jpa_nykkis" transaction-type="JTA">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
  
-        <jta-data-source>nykkisbeta</jta-data-source>
+        <jta-data-source>jdbc/h2demo</jta-data-source>
  		<class>nykkis.Customer</class>
  		<class>nykkis.User</class>
 
