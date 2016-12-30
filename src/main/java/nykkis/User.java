@@ -9,7 +9,7 @@ import javax.faces.bean.*;
 @RequestScoped
 @Entity
 @NamedQueries({ @NamedQuery(name = "searchAllUsers", query = "SELECT u from User u"),
-	@NamedQuery(name = "seatchByName", query = "SELECT u from User u where u.userid like :username") })
+	@NamedQuery(name = "searchByName", query = "SELECT u from User u where u.userid like :username") })
 
 public class User implements Serializable {
 	
@@ -23,7 +23,9 @@ public class User implements Serializable {
 	}
 	
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
+	@SequenceGenerator(name = "id_seq_user", sequenceName = "USER")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_seq_user")
 	private long userid;
 	private String username;
 	private String password;

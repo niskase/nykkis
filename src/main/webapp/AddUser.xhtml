@@ -21,7 +21,14 @@
 			<h:outputLabel for="author">Password</h:outputLabel>
 			<h:inputText id="password" type="password" value="#{user.password}" />
 			<h:outputLabel for="role">Role</h:outputLabel>
-			<h:inputText id="role" value="#{user.role}" />
+
+			<h:selectOneMenu value="#{user.role}">
+  				<f:selectItem itemValue="1" itemLabel="ADMIN" />
+   				<f:selectItem itemValue="2" itemLabel="BOSS" />
+   				<f:selectItem itemValue="3" itemLabel="SELLER" />	 
+   				<f:selectItem itemValue="4" itemLabel="BILLER" />
+   				<f:selectItem itemValue="5" itemLabel="SERVICER" />	 							
+			</h:selectOneMenu>	
 			
 			<h:commandButton action="#{userController.save}" value="Add an user" />
 			<h:commandButton value="Clear fields" type="reset" />

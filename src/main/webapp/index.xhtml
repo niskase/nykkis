@@ -5,7 +5,8 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html">
 
 <h:head>
-	<title>Customers</title>
+	<title>Users</title>
+	<h:outputStylesheet library="css" name="login.css" />
 </h:head>
 <h:body>
 	
@@ -30,30 +31,20 @@
                     #{u.role}
             </h:column>
 		</h:dataTable>
+		
+		<table>
+			<tr>
+				<td><h:commandButton action="#{userController.initialize()}"
+						value="load demo users" /></td>
+				<td><h:commandButton action="AddUser" value="insert a user" /></td>
+			</tr>
+		</table>
+		
+		<h:commandButton action="AddUser" value="Add new user" />
 </h:form>
 
-<h:form id="secondform">
-		<h:dataTable styleClass="data" cellspacing="0" cellpadding="0"
-			border="0" rowClasses="odd,even" value="#{customerController.customer}"
-			var="c">
-			<h:column headerstyleClass="first">
-				<f:facet name="header">CusID</f:facet>
-                    #{c.customerid}
-            </h:column>
-            <h:column headerstyleClass="first">
-				<f:facet name="header">Status</f:facet>
-                    #{c.customerstatus}
-            </h:column>
-            <h:column headerstyleClass="first">
-				<f:facet name="header">Name</f:facet>
-                    #{c.customername}
-            </h:column>
-			<h:column headerstyleClass="last">
-				<f:facet name="header">Town</f:facet>
-                    #{c.customercity}
-            </h:column>
-		</h:dataTable>
-</h:form>
+
+
 
 </h:body>
 </html>

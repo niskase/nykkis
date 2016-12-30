@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<h:head>
+	<title>Customers</title>
+</h:head>
+<h:body>
+
+<h:form id="firstform">
+		<h:dataTable styleClass="data" cellspacing="0" cellpadding="0"
+			border="0" rowClasses="odd,even" value="#{customerController.customer}"
+			var="c">
+			<h:column headerstyleClass="first">
+				<f:facet name="header">CusID</f:facet>
+                    #{c.customerid}
+            </h:column>
+            <h:column headerstyleClass="first">
+				<f:facet name="header">Status</f:facet>
+                    #{c.customerstatus}
+            </h:column>
+            <h:column headerstyleClass="first">
+				<f:facet name="header">Name</f:facet>
+                    #{c.customername}
+            </h:column>
+			<h:column headerstyleClass="last">
+				<f:facet name="header">Town</f:facet>
+                    #{c.customercity}
+            </h:column>
+		</h:dataTable>
+</h:form>
+
+</h:body>
+</html>
