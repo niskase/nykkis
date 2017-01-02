@@ -7,44 +7,36 @@
 <h:head>
 	<title>Users</title>
 	<h:outputStylesheet library="css" name="login.css" />
-</h:head>
-<h:body>
-	
-<h:form id="mainform">
-		<h:dataTable styleClass="data" cellspacing="0" cellpadding="0"
-			border="0" rowClasses="odd,even" value="#{userController.users}"
-			var="u">
-			<h:column headerstyleClass="first">
-				<f:facet name="header">UserID</f:facet>
-                    #{u.userid}
-            </h:column>
-            <h:column headerstyleClass="first">
-				<f:facet name="header">Username</f:facet>
-                    #{u.username}
-            </h:column>
-			<h:column headerstyleClass="first">
-				<f:facet name="header">Role</f:facet>
-                    #{u.role}
-            </h:column>
-            <h:column headerstyleClass="first">
-           		<f:facet name="delete">Delete</f:facet>
-            	<h:commandLink action="#{userController.deleteUser(u)}" value="Delete" />
-            </h:column>
-		</h:dataTable>
-		
+    <link href="css/login.css" rel="stylesheet"></link>
+   </h:head>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"></link>
+    
+<h:body id="wrap">
+<h:form action="action_page.php" >
+
+  <div align="center"> <img src="images/nykkislogo.png" />
+  </div>
+  <br />
+  <div class="container" align="center">
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname"></input>
+
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" ></input>
+        
+    <h:commandButton action="link" value="login" />
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1" >    
+  </div>
+
 		<table>
 			<tr>
-				<td><h:commandButton action="#{userController.init()}"
+				<td><h:commandButton action="#{userController.initialize()}"
 						value="load demo users" /></td>
-				<td><h:commandButton action="AddUser" value="insert a user" /></td>
 			</tr>
 		</table>
-		
 		<h:commandButton action="AddUser" value="Add new user" />
 </h:form>
-
-
-
-
 </h:body>
 </html>
