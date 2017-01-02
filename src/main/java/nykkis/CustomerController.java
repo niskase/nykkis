@@ -30,27 +30,34 @@ import javax.ejb.EJB;
 			this.customer = customer;
 		}
 
-		public String save() {
+		public String saveCustomer() {
 			
 			String viesti = "Tallennus onnistui: " + customer;
 
 			FacesContext facesContext = FacesContext.getCurrentInstance();
 
-			customerEjb.save(customer);
+			customerEjb.saveCustomer(customer);
 			
 			FacesMessage facesMessage = new FacesMessage(viesti);
 			facesContext.addMessage(null, facesMessage);
 
 			return "index";
 		}
+		
+		//user deleting
+				public void deleteCustomer(Customer c) {
+					
+					long customerid = c.getCustomerid();
+					
+					customerEjb.deleteCustomer(customerid);
+				}
 
 		public List<Customer> getCustomers() {
 			return customerEjb.getCustomers();
 		}
 
-		public String initialize() {
+		public void init() {
 			customerEjb.init();
-			return null;
 		}
 	}
 

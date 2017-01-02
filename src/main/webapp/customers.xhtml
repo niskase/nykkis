@@ -6,31 +6,46 @@
 
 <h:head>
 	<title>Customers</title>
+	<h:outputStylesheet library="css" name="login.css" />
 </h:head>
 <h:body>
-
-<h:form id="firstform">
+	
+<h:form id="mainform">
 		<h:dataTable styleClass="data" cellspacing="0" cellpadding="0"
-			border="0" rowClasses="odd,even" value="#{customerController.customer}"
+			border="0" rowClasses="odd,even" value="#{customerController.customers}"
 			var="c">
 			<h:column headerstyleClass="first">
-				<f:facet name="header">CusID</f:facet>
+				<f:facet name="header">Customer ID</f:facet>
                     #{c.customerid}
             </h:column>
-            <h:column headerstyleClass="first">
-				<f:facet name="header">Status</f:facet>
-                    #{c.customerstatus}
+			<h:column headerstyleClass="first">
+				<f:facet name="header">Created by</f:facet>
+                    #{c.userid}
             </h:column>
-            <h:column headerstyleClass="first">
+			<h:column headerstyleClass="first">
 				<f:facet name="header">Name</f:facet>
                     #{c.customername}
             </h:column>
-			<h:column headerstyleClass="last">
-				<f:facet name="header">Town</f:facet>
-                    #{c.customercity}
+			<h:column headerstyleClass="first">
+				<f:facet name="header">Email</f:facet>
+                    #{c.customeremail}
             </h:column>
+			<h:column headerstyleClass="first">
+				<f:facet name="header">Country</f:facet>
+                    #{c.customercountry}
+            </h:column>
+
+            <!--  <h:column headerstyleClass="first">
+           		<f:facet name="delete">Delete</f:facet>
+            	<h:commandLink action="#{userController.deleteCustomer(c)}" value="Delete" />
+            </h:column>-->
 		</h:dataTable>
+		
+		<h:commandButton action="AddCustomer" value="Add a new customer" />
 </h:form>
+
+
+
 
 </h:body>
 </html>

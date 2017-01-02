@@ -49,8 +49,8 @@ public class ProjectEJB {
 		
 	}
 
-	//saving customer
-	public void save(Customer customer) {
+	//save customer
+	public void saveCustomer(Customer customer) {
 		try {
 			em.persist(customer);
 			System.out.println("save a customer: " + customer);
@@ -59,8 +59,18 @@ public class ProjectEJB {
 			System.out.println("Not saved!");
 		}
 	}
+	//delete customer
+	public void deleteCustomer(long customerid) {
+		try {
+			Customer delete = em.find(Customer.class, customerid);
+			em.remove(delete);
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Not deleted");
+		}
+	}
 	
-	//saving user
+	//save user
 	public void saveUser(User user) {
 		try {
 			em.persist(user);
@@ -70,8 +80,8 @@ public class ProjectEJB {
 			System.out.println("Not saved!");
 		}
 	}
-	//deleting user
 	
+	//delete user
 	public void deleteUser(long userid) {
 		try {
 			User delete = em.find(User.class, userid);
