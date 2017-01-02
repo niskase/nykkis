@@ -9,33 +9,11 @@
 	<h:outputStylesheet library="css" name="login.css" />
 </h:head>
 <h:body>
-	
-<h:form id="mainform">
-		<h:dataTable styleClass="data" cellspacing="0" cellpadding="0"
-			border="0" rowClasses="odd,even" value="#{userController.users}"
-			var="u">
-			<h:column headerstyleClass="first">
-				<f:facet name="header">UserID</f:facet>
-                    #{u.userid}
-            </h:column>
-            <h:column headerstyleClass="first">
-				<f:facet name="header">Username</f:facet>
-                    #{u.username}
-            </h:column>
-			<h:column headerstyleClass="first">
-				<f:facet name="header">Role</f:facet>
-                    #{u.role}
-            </h:column>
-            <h:column headerstyleClass="first">
-           		<f:facet name="delete">Delete</f:facet>
-            	<h:commandLink action="#{userController.deleteUser(u)}" value="Delete" />
-            </h:column>
-		</h:dataTable>
 		
-		<h:commandButton action="AddUser" value="Add new user" />
-		<h:commandButton action="customers" value="Customers" />
-
-</h:form>
+		<h:form>
+		<h:commandButton action="ViewUsers" value="View users" />
+		<h:commandButton action="ViewCustomers" value="View customers" />
+		</h:form>
 
 </h:body>
 </html>
