@@ -21,6 +21,10 @@ import javax.ejb.EJB;
 		public UserController() {
 		//alusta
 		}
+		
+		public void init() {
+			userEjb.init();
+		}
 
 		//getterit ja setterit
 		public User getUser() {
@@ -44,6 +48,13 @@ import javax.ejb.EJB;
 			facesContext.addMessage(null, facesMessage);
 
 			return "index";
+		}
+		//user deleting
+		public void deleteUser(User u) {
+			
+			long userid = u.getUserid();
+			
+			userEjb.deleteUser(userid);
 		}
 
 		public List<User> getUsers() {

@@ -17,6 +17,7 @@ public class User implements Serializable {
 	 */
 	//private static final long serialVersionUID = 1L;
 
+
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 	private long userid;
@@ -29,6 +30,7 @@ public class User implements Serializable {
 	}
 	
 	private role role;
+	
 	private int loginstatus; 
 
 	//Constructor superclass
@@ -77,7 +79,6 @@ public class User implements Serializable {
 		this.role = role;
 	}
 
-	//tostringi
 	@Override
 	public String toString() {
 		return "User [userid=" + userid + ", username=" + username

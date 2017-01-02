@@ -70,7 +70,17 @@ public class ProjectEJB {
 			System.out.println("Not saved!");
 		}
 	}
-
+	//deleting user
+	
+	public void deleteUser(long userid) {
+		try {
+			User delete = em.find(User.class, userid);
+			em.remove(delete);
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Not deleted");
+		}
+	}
 	
 	@SuppressWarnings("unchecked")
 	public List<Customer> getCustomers() {
@@ -80,6 +90,7 @@ public class ProjectEJB {
 		return customers;
 	}
 	
+	// get all users
 	@SuppressWarnings("unchecked")
 	public List<User> getUsers() {
 		List<User> users= null; 

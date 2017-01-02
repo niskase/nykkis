@@ -19,22 +19,22 @@
                     #{u.userid}
             </h:column>
             <h:column headerstyleClass="first">
-				<f:facet name="header">Loginstatus</f:facet>
-                    #{u.loginstatus}
-            </h:column>
-            <h:column headerstyleClass="first">
 				<f:facet name="header">Username</f:facet>
                     #{u.username}
             </h:column>
-			<h:column headerstyleClass="last">
+			<h:column headerstyleClass="first">
 				<f:facet name="header">Role</f:facet>
                     #{u.role}
+            </h:column>
+            <h:column headerstyleClass="first">
+           		<f:facet name="delete">Delete</f:facet>
+            	<h:commandLink action="#{userController.deleteUser(u)}" value="Delete" />
             </h:column>
 		</h:dataTable>
 		
 		<table>
 			<tr>
-				<td><h:commandButton action="#{userController.initialize()}"
+				<td><h:commandButton action="#{userController.init()}"
 						value="load demo users" /></td>
 				<td><h:commandButton action="AddUser" value="insert a user" /></td>
 			</tr>
