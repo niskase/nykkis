@@ -26,7 +26,7 @@ public class User implements Serializable {
 	
 	//enumi
 	public enum role {
-		SELLER, SERVICER, BILLER, BOSS, ADMIN
+		seller, servicer, biller, boss, admin
 	}
 	
 	private role role;

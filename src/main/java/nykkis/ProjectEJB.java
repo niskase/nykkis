@@ -27,7 +27,7 @@ public class ProjectEJB {
 		testuser.setUserid(1);
 		testuser.setUsername("admin");
 		testuser.setPassword("pass");
-		testuser.setRole(role.ADMIN);
+		testuser.setRole(role.admin);
 		testuser.setLoginstatus(0); 
 		
 		em.persist(testuser);
