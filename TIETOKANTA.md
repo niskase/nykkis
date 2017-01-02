@@ -17,7 +17,7 @@ INSERT INTO USER (LoginStatus, UserName, PassWord, Role)
 VALUES(0,'boss','root', 'boss');
 
 
-CREATE TABLE Customers (
+CREATE TABLE CUSTOMER (
 CustomerID int(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 UserID int(6) NOT NULL,
 CustomerName varchar(100),
@@ -34,13 +34,13 @@ FOREIGN KEY (UserID) REFERENCES USER(UserID),
 UNIQUE (CustomerEmail)
 );
 
-INSERT INTO Customers (UserID, CustomerName, CustomerPhone, CustomerEmail, CustomerPhoto, CustomerCountry, CustomerSellerResp, CustomerAddress, CustomerZipCode, CustomerCity, CustomerStatus)
-VALUES(1, 'Aki Asiakas', +358123456789, 'asiakas@netti.fi', 'profiilikuva.png', 'Finland', 'Luottomyynti Oy', 'Survontie 9', 12345, 'Jyväskylä', 'TestStatus');
+INSERT INTO CUSTOMER (UserID, CustomerName, CustomerPhone, CustomerEmail, CustomerPhoto, CustomerCountry, CustomerSellerResp, CustomerAddress, CustomerZipCode, CustomerCity, CustomerStatus)
+VALUES(1, 'Aki Asiakas', +358123456789, 'asiakas@netti.fi', 'profiilikuva.png', 'Finland', 'Luottomyynti Oy', 'Survontie 9', 12345, 'Jyväskylä', 'contact');
 
-INSERT INTO Customers (UserID, CustomerName, CustomerPhone, CustomerEmail, CustomerPhoto, CustomerCountry, CustomerSellerResp, CustomerAddress, CustomerZipCode, CustomerCity, CustomerStatus)
-VALUES(1, 'Nakke Nakuttaja', +358123456789, 'asiakas@natsi.fi', 'profiilikuva.png', 'Finland', 'Luottomyynti Oy', 'Survontie 9', 12345, 'Jyväskylä', 'TestStatus');
+INSERT INTO CUSTOMER (UserID, CustomerName, CustomerPhone, CustomerEmail, CustomerPhoto, CustomerCountry, CustomerSellerResp, CustomerAddress, CustomerZipCode, CustomerCity, CustomerStatus)
+VALUES(1, 'Nakke Nakuttaja', +358123456789, 'asiakas@natsi.fi', 'profiilikuva.png', 'Finland', 'Luottomyynti Oy', 'Survontie 9', 12345, 'Jyväskylä', 'contact');
 
-CREATE TABLE Companies (
+CREATE TABLE COMPANY (
 CompanyID int(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 CustomerID int(6),
 CompanyName varchar(50),
@@ -50,16 +50,16 @@ CompanyZipCode int(10),
 CompanyCity varchar(255),
 CompanyWebsite varchar(100),
 CompanyBusinessID char(50),
-FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID),
+FOREIGN KEY (CustomerID) REFERENCES CUSTOMER(CustomerID),
 UNIQUE (CompanyName)
 );
 
-INSERT INTO Companies (CustomerID, CompanyName, CompanyPhone, CompanyAddress, CompanyZipCode, CompanyCity, CompanyWebsite, CompanyBusinessID)
+INSERT INTO COMPANY (CustomerID, CompanyName, CompanyPhone, CompanyAddress, CompanyZipCode, CompanyCity, CompanyWebsite, CompanyBusinessID)
 VALUES(1, 'Komppany Oy', +3580989873647, 'Jokelantie 41', 40296, 'Pahvisaari', 'www.komppany.com', 52352825);
 
-INSERT INTO Companies (CustomerID, CompanyName, CompanyPhone, CompanyAddress, CompanyZipCode, CompanyCity, CompanyWebsite, CompanyBusinessID)
+INSERT INTO COMPANY (CustomerID, CompanyName, CompanyPhone, CompanyAddress, CompanyZipCode, CompanyCity, CompanyWebsite, CompanyBusinessID)
 VALUES(2, 'Kamppany Oy', +3580989873648, 'Jokelantie 40', 40296, 'Pahvisaari', 'www.kamppany.com', 52352825);
 
-SELECT * FROM Users;
-SELECT * FROM Customers;
-SELECT * FROM Companies;
+SELECT * FROM USER;
+SELECT * FROM CUSTOMER;
+SELECT * FROM COMPANY;
