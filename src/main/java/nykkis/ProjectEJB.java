@@ -62,8 +62,8 @@ public class ProjectEJB {
 	//delete customer
 	public void deleteCustomer(long customerid) {
 		try {
-			Customer delete = em.find(Customer.class, customerid);
-			em.remove(delete);
+			Customer deleteCustomer = em.find(Customer.class, customerid);
+			em.remove(deleteCustomer);
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("Not deleted");

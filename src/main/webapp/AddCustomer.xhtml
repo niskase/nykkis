@@ -17,7 +17,7 @@
 
 
 	<h:form id="insertform">
-	<h:selectOneRadio value="#{customer.userid}" required="true">
+	<!-- <selectOneRadio value="#{customer.userid}" required="true">
 	<h:dataTable styleClass="data" cellspacing="0" cellpadding="0"
 			border="0" rowClasses="odd,even" value="#{userController.users}"
 			var="u">
@@ -25,8 +25,9 @@
 			<f:selectItem itemValue="#{u.userid}" itemLabel="#{u.username} (#{u.role})" />
              </h:column>
      </h:dataTable>
-     </h:selectOneRadio> 
-
+     </h:selectOneRadio> -->
+		
+		<div>Creator ID<h:inputText id="creatorid" value="#{customer.userid}" required="true" /></div>
 		<div>Customer name <h:inputText id="customername" value="#{customer.customername}" required="true" /></div>
 		<div>Customer phone <h:inputText id="customerphone" value="#{customer.customerphone}" /></div>
 		<div>Customer email <h:inputText id="customeremail" value="#{customer.customeremail}" /></div>
@@ -35,7 +36,8 @@
 		<div>Customer's response seller <h:inputText id="customerrespseller" value="#{customer.customersellerresp}" /></div>
 		<div>Customer address <h:inputText id="customeraddress" value="#{customer.customeraddress}" /></div>
 		<div>Customer city <h:inputText id="customercity" value="#{customer.customercity}" /></div>
-		<div>Customer status <h:inputText id="customerstatus" value="#{customer.customerstatus}" /></div>
+		<div>Customer status (contact,lead,on_going,customer,old_customer,retired)<h:inputText id="customerstatus" value="#{customer.customerstatus}" /></div> 
+
 		
 		<h:commandButton action="#{customerController.saveCustomer}" value="Add a customer" />
 		<h:commandButton value="Clear fields" type="reset" />

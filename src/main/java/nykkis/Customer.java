@@ -14,16 +14,19 @@ public class Customer implements Serializable {
 	/**
 	 * 
 	 */
-	//private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	public enum status {contact,lead,on_going,customer,old_customer,retired};
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 	private long customerid;
-	public long userid;
+	private long userid;
+	@Column(unique=true)
 	private String customername;
+	@Column(unique=true)
 	private String customerphone;
+	@Column(unique=true)
 	private String customeremail;
 	private String customerphoto;
 	private String customercountry;
