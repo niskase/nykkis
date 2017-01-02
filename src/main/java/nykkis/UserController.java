@@ -19,9 +19,10 @@ import javax.ejb.EJB;
 		private User user;
 
 		public UserController() {
-
+		//alusta
 		}
 
+		//getterit ja setterit
 		public User getUser() {
 			return user;
 		}
@@ -30,13 +31,14 @@ import javax.ejb.EJB;
 			this.user = user;
 		}
 
-		public String save() {
+		//user saving
+		public String saveUser() {
 			
 			String viesti = "Tallennus onnistui: " + user;
 
 			FacesContext facesContext = FacesContext.getCurrentInstance();
 
-			userEjb.save(user);
+			userEjb.saveUser(user);
 			
 			FacesMessage facesMessage = new FacesMessage(viesti);
 			facesContext.addMessage(null, facesMessage);
@@ -46,11 +48,6 @@ import javax.ejb.EJB;
 
 		public List<User> getUsers() {
 			return userEjb.getUsers();
-		}
-
-		public String initialize() {
-			userEjb.init();
-			return null;
 		}
 	}
 

@@ -8,27 +8,26 @@ import javax.faces.bean.*;
 @ManagedBean
 @RequestScoped
 @Entity
-@NamedQueries({ @NamedQuery(name = "searchAllUsers", query = "SELECT u from User u"),
-	@NamedQuery(name = "searchByName", query = "SELECT u from User u where u.userid like :username") })
+@NamedQuery(name = "searchAllUsers", query = "SELECT u from User u")
 
 public class User implements Serializable {
 	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	//private static final long serialVersionUID = 1L;
+
+	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+	private long userid;
+	private String username;
+	private String password;
 	
+	//enumi
 	public enum role {
 		SELLER, SERVICER, BILLER, BOSS, ADMIN
 	}
 	
-	@Id
-    //@GeneratedValue(strategy = GenerationType.AUTO)
-	@SequenceGenerator(name = "id_seq_user", sequenceName = "USER")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_seq_user")
-	private long userid;
-	private String username;
-	private String password;
 	private role role;
 	private int loginstatus; 
 
@@ -76,6 +75,14 @@ public class User implements Serializable {
 
 	public void setRole(role role) {
 		this.role = role;
+	}
+
+	//tostringi
+	@Override
+	public String toString() {
+		return "User [userid=" + userid + ", username=" + username
+				+ ", password=" + password + ", role=" + role
+				+ ", loginstatus=" + loginstatus + "]";
 	}
 	
 }

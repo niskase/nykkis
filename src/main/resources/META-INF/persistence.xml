@@ -7,14 +7,14 @@
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
  
         <jta-data-source>jdbc/h2demo</jta-data-source>
+        
  		<class>nykkis.Customer</class>
  		<class>nykkis.User</class>
 
         <properties>
-           <!--  <property name="eclipselink.ddl-generation" value="drop-and-create-tables" />--> 
+            <property name="eclipselink.ddl-generation" value="drop-and-create-tables" /> 
             <property name="eclipselink.ddl-generation.output-mode"
                 value="database" />
- 
         </properties>
     </persistence-unit>
 </persistence>

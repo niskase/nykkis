@@ -23,32 +23,33 @@ public class ProjectEJB {
 	
 	public void init() {
 		
-		User user1 = new User();
-		user1.setUserid(1);
-		user1.setUsername("admin");
-		user1.setPassword("pass");
-		user1.setRole(role.ADMIN);
-		user1.setLoginstatus(0); 
+		User testuser = new User();
+		testuser.setUserid(1);
+		testuser.setUsername("admin");
+		testuser.setPassword("pass");
+		testuser.setRole(role.ADMIN);
+		testuser.setLoginstatus(0); 
 		
-		em.persist(user1);
+		em.persist(testuser);
 		
-		Customer customer1 = new Customer();
-		customer1.setCustomerid(1);
-		customer1.setUserid(1);
-		customer1.setCustomername("Customer");
-		customer1.setCustomerphone("0000000000");
-		customer1.setCustomeremail("customer@mail.com");
-		customer1.setCustomerphoto(null);
-		customer1.setCustomercountry("Finland");
-		customer1.setCustomersellerresp(null);
-		customer1.setCustomeraddress("Jokelantie 1");
-		customer1.setCustomercity("Jyväskylä");
-		customer1.setCustomerstatus(status.contact);
+		Customer testcustomer = new Customer();
+		testcustomer.setCustomerid(1);
+		testcustomer.setUserid(1);
+		testcustomer.setCustomername("Customer");
+		testcustomer.setCustomerphone("0000000000");
+		testcustomer.setCustomeremail("customer@mail.com");
+		testcustomer.setCustomerphoto(null);
+		testcustomer.setCustomercountry("Finland");
+		testcustomer.setCustomersellerresp(null);
+		testcustomer.setCustomeraddress("Jokelantie 1");
+		testcustomer.setCustomercity("Jyväskylä");
+		testcustomer.setCustomerstatus(status.contact);
 		
-		em.persist(customer1);
+		em.persist(testcustomer);
 		
 	}
 
+	//saving customer
 	public void save(Customer customer) {
 		try {
 			em.persist(customer);
@@ -59,7 +60,8 @@ public class ProjectEJB {
 		}
 	}
 	
-	public void save(User user) {
+	//saving user
+	public void saveUser(User user) {
 		try {
 			em.persist(user);
 			System.out.println("save an user: " + user);
