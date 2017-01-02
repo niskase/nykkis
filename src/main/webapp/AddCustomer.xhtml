@@ -13,25 +13,21 @@
 	<div style="color: red">
 		<h:messages />
 	</div>
+	
+
 
 	<h:form id="insertform">
 	<h:dataTable styleClass="data" cellspacing="0" cellpadding="0"
 			border="0" rowClasses="odd,even" value="#{userController.users}"
 			var="u">
-			
 			<h:column headerstyleClass="first">
-				<f:facet name="header">UserID</f:facet>
-                    #{u.userid}
-            </h:column>
-            <h:column headerstyleClass="first">
-				<f:facet name="header">Username</f:facet>
-                    #{u.username}
-            </h:column>
-            
-            </h:dataTable>
-            
-		<div>Creator <h:inputText id="userid" value="#{customer.userid}" required="true" /></div>
-		<div>Customer name <h:inputText id="customername" value="#{customer.customername}" required="true" /></div>
+			<h:selectOneRadio value="#{customer.userid}">
+			<f:selectItem itemValue="#{u.userid}" itemLabel="#{u.username} (#{u.role})" />
+			</h:selectOneRadio> 
+             </h:column>
+     </h:dataTable>
+
+		<div>Customer name <h:inputText id="customername" value="#{customer.customername}" /></div>
 		<div>Customer phone <h:inputText id="customerphone" value="#{customer.customerphone}" /></div>
 		<div>Customer email <h:inputText id="customeremail" value="#{customer.customeremail}" /></div>
 		<div>Customer photo <h:inputText id="customerphoto" value="#{customer.customerphoto}" /></div>
