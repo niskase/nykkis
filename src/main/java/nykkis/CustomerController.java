@@ -41,7 +41,7 @@ import javax.ejb.EJB;
 			FacesMessage facesMessage = new FacesMessage(viesti);
 			facesContext.addMessage(null, facesMessage);
 
-			return "index";
+			return "ViewCustomers";
 		}
 		
 		//user deleting
